@@ -1,6 +1,7 @@
 package com.micahnyabuto.fintrack.ui.Screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -13,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -37,9 +39,11 @@ fun LandingScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(R.drawable.fintrack),
+            painter = painterResource(R.drawable.fin),
             contentDescription = "Logo",
             Modifier.size(280.dp)
+                .background(Color.Transparent)
+
         )
 
 
@@ -59,14 +63,14 @@ fun LandingScreen(
             onClick = { /*TODO*/ },
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(20.dp)
+                .padding(35.dp)
                 .height(50.dp),
             shape = RoundedCornerShape(6.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Green,
-                contentColor = Color.White,
-
+                contentColor = Color.Unspecified
             )
+
         ) {
             Text(text = "Get Started",
                 color = Color.White)
