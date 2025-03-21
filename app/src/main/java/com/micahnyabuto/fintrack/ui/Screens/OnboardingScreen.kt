@@ -2,8 +2,10 @@ package com.micahnyabuto.fintrack.ui.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -12,10 +14,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,7 +30,7 @@ import com.micahnyabuto.fintrack.R
 
 
 @Composable
-fun LandingScreen(
+fun OnboardingScreen(
     modifier: Modifier = Modifier
 ){
     Column(
@@ -51,10 +52,10 @@ fun LandingScreen(
         Text(text = "Welcome to Fintrack ",
             //modifier = Modifier.padding(10.dp),
             color = Color.Green,
-            fontSize = 20.sp,
+            fontSize = 30.sp,
             fontWeight = FontWeight.SemiBold)
         Spacer(modifier = Modifier.size(8.dp))
-        Text(text = "Where your financial discipline begins ",
+        Text(text = "Save smarter save more ",
             color = Color.Green
             // modifier = Modifier.padding(10.dp),
         )
@@ -65,20 +66,32 @@ fun LandingScreen(
                 .fillMaxWidth()
                 .padding(35.dp)
                 .height(50.dp),
-            shape = RoundedCornerShape(6.dp),
+            shape = RoundedCornerShape(40.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Green,
-                contentColor = Color.Unspecified
+                contentColor = Color.White
             )
+
 
         ) {
             Text(text = "Get Started",
                 color = Color.White)
         }
+        Row {
+            Text(text = "Already have an account?")
+            Spacer(modifier = Modifier.size(4.dp))
+                Text(text = "Log in",
+                    color = Color.Green,
+                    modifier = Modifier
+                        .clickable{}
+                )
+
+        }
     }
+
 }
 @Preview
 @Composable
 fun LandingScreenPreview(){
-    LandingScreen()
+    OnboardingScreen()
 }
