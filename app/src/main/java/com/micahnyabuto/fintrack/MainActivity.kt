@@ -12,7 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.compose.FintrackTheme
-import com.micahnyabuto.fintrack.ui.Screens.LandingScreen
+import com.micahnyabuto.fintrack.ui.Screens.OnboardingScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FintrackTheme {
-                LandingScreen()
+                OnboardingScreen()
             }
         }
     }
