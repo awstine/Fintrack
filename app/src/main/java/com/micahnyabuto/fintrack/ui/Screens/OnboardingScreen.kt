@@ -21,11 +21,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.LinearGradient
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.compose.onPrimaryLight
+import com.example.compose.primaryLight
 import com.micahnyabuto.fintrack.R
 
 
@@ -51,12 +54,13 @@ fun OnboardingScreen(
         Spacer(modifier = Modifier.size(30.dp))
         Text(text = "Welcome to Fintrack ",
             //modifier = Modifier.padding(10.dp),
-            color = Color.Green,
-            fontSize = 30.sp,
+            color = primaryLight,
+            fontSize = 32.sp,
             fontWeight = FontWeight.SemiBold)
         Spacer(modifier = Modifier.size(8.dp))
         Text(text = "Save smarter save more ",
-            color = Color.Green
+            color = primaryLight,
+            fontSize = 20.sp
             // modifier = Modifier.padding(10.dp),
         )
         Spacer(modifier = Modifier.size( 50.dp))
@@ -68,8 +72,8 @@ fun OnboardingScreen(
                 .height(50.dp),
             shape = RoundedCornerShape(40.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Green,
-                contentColor = Color.White
+                containerColor = primaryLight,
+                contentColor = onPrimaryLight
             )
 
 
@@ -81,7 +85,7 @@ fun OnboardingScreen(
             Text(text = "Already have an account?")
             Spacer(modifier = Modifier.size(4.dp))
                 Text(text = "Log in",
-                    color = Color.Green,
+                    color= primaryLight,
                     modifier = Modifier
                         .clickable{}
                 )
