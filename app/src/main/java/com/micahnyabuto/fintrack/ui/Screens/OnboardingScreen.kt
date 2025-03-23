@@ -94,7 +94,7 @@ fun OnboardingScreen(
     }
 
 }
-
+@Preview
 @Composable
 fun LandingScreenPreview(){
     OnboardingScreen()
