@@ -43,6 +43,7 @@ fun LandingScreen(
 
         )
 
+
         Spacer(modifier = Modifier.size(30.dp))
         Text(text = "Welcome to Fintrack ",
             //modifier = Modifier.padding(10.dp),
@@ -52,6 +53,7 @@ fun LandingScreen(
         Spacer(modifier = Modifier.size(8.dp))
         Text(text = "Where your financial discipline begins ",
             color = Color.Green
+            // modifier = Modifier.padding(10.dp),
         )
         Spacer(modifier = Modifier.size( 50.dp))
         Button(
@@ -65,12 +67,14 @@ fun LandingScreen(
                 containerColor = Color.Green,
                 contentColor = Color.Unspecified
             )
+
         ) {
             Text(text = "Get Started",
                 color = Color.White)
         }
     }
 }
+
 
 @Composable
 fun LandingScreenPreview(){
