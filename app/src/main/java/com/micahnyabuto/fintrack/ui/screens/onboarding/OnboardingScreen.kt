@@ -1,4 +1,4 @@
-package com.micahnyabuto.fintrack.ui.Screens
+package com.micahnyabuto.fintrack.ui.screens.onboarding
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,7 +26,7 @@ import com.micahnyabuto.fintrack.R
 
 
 @Composable
-fun LandingScreen(
+fun OnboardingScreen(
     modifier: Modifier = Modifier
 ){
     Column(
@@ -43,19 +43,21 @@ fun LandingScreen(
 
         )
 
-
         Spacer(modifier = Modifier.size(30.dp))
+
         Text(text = "Welcome to Fintrack ",
             //modifier = Modifier.padding(10.dp),
             color = Color.Green,
             fontSize = 20.sp,
             fontWeight = FontWeight.SemiBold)
         Spacer(modifier = Modifier.size(8.dp))
+
         Text(text = "Where your financial discipline begins ",
             color = Color.Green
             // modifier = Modifier.padding(10.dp),
         )
         Spacer(modifier = Modifier.size( 50.dp))
+
         Button(
             onClick = { /*TODO*/ },
             modifier = Modifier
@@ -73,10 +75,4 @@ fun LandingScreen(
                 color = Color.White)
         }
     }
-}
-
-
-@Composable
-fun LandingScreenPreview(){
-    LandingScreen()
 }
