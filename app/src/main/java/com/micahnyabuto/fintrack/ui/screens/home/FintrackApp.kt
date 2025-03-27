@@ -21,6 +21,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,30 +42,69 @@ import com.example.compose.scrimLightMediumContrast
 import com.micahnyabuto.fintrack.R
 
 
-@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
 fun FintrackApp() {
+    val items = listOf(
+        BottomNavigationItem(
+            title = "Home",
+            selectedIcon = painterResource(R.drawable.home),
+            unselectedIcon = painterResource(R.drawable.home2),
+        ),
+
+        BottomNavigationItem(
+            title = "Chart",
+            selectedIcon = painterResource(R.drawable.barchart2),
+            unselectedIcon = painterResource(R.drawable.barchart),
+        ),
+
+        BottomNavigationItem(
+            title = "Add",
+            selectedIcon = painterResource(R.drawable.add),
+            unselectedIcon = painterResource(R.drawable.add),
+        ),
+
+        BottomNavigationItem(
+            title = "Add",
+            selectedIcon = painterResource(R.drawable.wallet2),
+            unselectedIcon = painterResource(R.drawable.wallet),
+        ),
+
+        BottomNavigationItem(
+            title = "Profile",
+            selectedIcon = painterResource(R.drawable.profile2),
+            unselectedIcon = painterResource(R.drawable.profile),
+        ),
+    )
+
     var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
+
     Scaffold(
         bottomBar = {
-            NavigationBar {
+            NavigationBar(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                containerColor = Color.White
+            ) {
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
+                        icon = {
+                            Icon(
+                                painter = if (index == selectedItemIndex) {
+                                    item.selectedIcon
+                                } else {
+                                    item.unselectedIcon
+                                },
+                                contentDescription = item.title
+                            )
+                        },
+                        label = { Text(text = item.title) },
                         selected = selectedItemIndex == index,
                         onClick = {
                             selectedItemIndex = index
                         },
-                        label = {
-                            Text(text = item.title)
-                        },
-                        icon = {
-                            Icon(
-                                imageVector = if (index == selectedItemIndex) {
-                                    item.selectedIcon
-                                } else item.unselectedIcon,
-                                contentDescription = item.title
-                            )
-                        }
+                        colors = NavigationBarItemDefaults.colors(
+                            indicatorColor = Color.Transparent
+                        )
                     )
                 }
             }
@@ -74,7 +114,8 @@ fun FintrackApp() {
             modifier = Modifier
                 .fillMaxSize()
                 .background(Color.White)
-              //  .verticalScroll(rememberScrollState())
+                .padding(it) // Use the padding provided by Scaffold
+            //  .verticalScroll(rememberScrollState())
         ) {
             Row(
                 modifier = Modifier
