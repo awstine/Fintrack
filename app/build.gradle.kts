@@ -60,5 +60,4 @@ dependencies {
     //Extended icons
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
 
-
 }
