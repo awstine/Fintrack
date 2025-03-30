@@ -1,6 +1,8 @@
 package com.example.compose
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.LinearGradient
 
+val LinearGradient = Color(0xFF69AEA9)
 val primaryLight = Color(0xFF306A42)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFB3F1BF)
@@ -61,7 +63,7 @@ val surfaceVariantLightMediumContrast = Color(0xFFDDE5DA)
 val onSurfaceVariantLightMediumContrast = Color(0xFF313831)
 val outlineLightMediumContrast = Color(0xFF4D544D)
 val outlineVariantLightMediumContrast = Color(0xFF676F67)
-val scrimLightMediumContrast = Color(0xFF000000)
+val scrimLightMediumContrast = Color(0xFF1E1D1D)
 val inverseSurfaceLightMediumContrast = Color(0xFF2D322D)
 val inverseOnSurfaceLightMediumContrast = Color(0xFFEEF2EA)
 val inversePrimaryLightMediumContrast = Color(0xFF97D5A4)
