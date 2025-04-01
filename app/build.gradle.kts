@@ -57,6 +57,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
+    //Canvas
+    implementation("com.patrykandpatrick.vico:compose-m3:1.12.0")
+    implementation("com.patrykandpatrick.vico:compose:1.12.0")
+
     //Extended icons
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
 
