@@ -6,9 +6,10 @@ data class Transactions(
     val amount: String,
 )
 
-val transactions = listOf(
-    Transactions("Upwork","Yesterday","Ksh 15,000"),
-    Transactions("Youtube","Yesterday","Ksh -5,000"),
-    Transactions("Sportify","Feb 20, 2025","Ksh 2,000"),
-    Transactions("Paypal","Jan 16, 2025","Ksh -150,000"),
-)
+val transactions =
+    listOf(
+        Transactions("Upwork", "Yesterday", "Ksh 15,000"),
+        Transactions("Youtube", "Yesterday", "Ksh -5,000"),
+        Transactions("Spotify", "Feb 20, 2025", "Ksh 2,000"),
+        Transactions("Paypal", "Jan 16, 2025", "Ksh -150,000"),
+    )

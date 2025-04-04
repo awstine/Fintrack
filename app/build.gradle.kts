@@ -23,7 +23,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -57,11 +57,9 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    //Canvas
-    implementation("com.patrykandpatrick.vico:compose-m3:1.12.0")
-    implementation("com.patrykandpatrick.vico:compose:1.12.0")
+    // splashscreen
+    implementation("androidx.core:core-splashscreen:1.0.1")
 
-    //Extended icons
+    // Extended icons
     implementation("androidx.compose.material:material-icons-extended:1.3.1")
-
 }

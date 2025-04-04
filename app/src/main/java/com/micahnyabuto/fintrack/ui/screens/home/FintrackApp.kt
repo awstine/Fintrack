@@ -1,6 +1,5 @@
 package com.micahnyabuto.fintrack.ui.screens.home
 
-import android.annotation.SuppressLint
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -44,57 +43,56 @@ import com.micahnyabuto.fintrack.R
 
 @Composable
 fun FintrackApp() {
-    val items = listOf(
-        BottomNavigationItem(
-            title = "Home",
-            selectedIcon = painterResource(R.drawable.home),
-            unselectedIcon = painterResource(R.drawable.home2),
-        ),
-
-        BottomNavigationItem(
-            title = "Chart",
-            selectedIcon = painterResource(R.drawable.barchart2),
-            unselectedIcon = painterResource(R.drawable.barchart),
-        ),
-
-        BottomNavigationItem(
-            title = "Add",
-            selectedIcon = painterResource(R.drawable.add),
-            unselectedIcon = painterResource(R.drawable.add),
-        ),
-
-        BottomNavigationItem(
-            title = "Add",
-            selectedIcon = painterResource(R.drawable.wallet2),
-            unselectedIcon = painterResource(R.drawable.wallet),
-        ),
-
-        BottomNavigationItem(
-            title = "Profile",
-            selectedIcon = painterResource(R.drawable.profile2),
-            unselectedIcon = painterResource(R.drawable.profile),
-        ),
-    )
+    val items =
+        listOf(
+            BottomNavigationItem(
+                title = "Home",
+                selectedIcon = painterResource(R.drawable.home),
+                unselectedIcon = painterResource(R.drawable.home2),
+            ),
+            BottomNavigationItem(
+                title = "Chart",
+                selectedIcon = painterResource(R.drawable.barchart2),
+                unselectedIcon = painterResource(R.drawable.barchart),
+            ),
+            BottomNavigationItem(
+                title = "Add",
+                selectedIcon = painterResource(R.drawable.add),
+                unselectedIcon = painterResource(R.drawable.add),
+            ),
+            BottomNavigationItem(
+                title = "Add",
+                selectedIcon = painterResource(R.drawable.wallet2),
+                unselectedIcon = painterResource(R.drawable.wallet),
+            ),
+            BottomNavigationItem(
+                title = "Profile",
+                selectedIcon = painterResource(R.drawable.profile2),
+                unselectedIcon = painterResource(R.drawable.profile),
+            ),
+        )
 
     var selectedItemIndex by rememberSaveable { mutableStateOf(0) }
 
     Scaffold(
         bottomBar = {
             NavigationBar(
-                modifier = Modifier
-                    .fillMaxWidth(),
-                containerColor = Color.White
+                modifier =
+                    Modifier
+                        .fillMaxWidth(),
+                containerColor = Color.White,
             ) {
                 items.forEachIndexed { index, item ->
                     NavigationBarItem(
                         icon = {
                             Icon(
-                                painter = if (index == selectedItemIndex) {
-                                    item.selectedIcon
-                                } else {
-                                    item.unselectedIcon
-                                },
-                                contentDescription = item.title
+                                painter =
+                                    if (index == selectedItemIndex) {
+                                        item.selectedIcon
+                                    } else {
+                                        item.unselectedIcon
+                                    },
+                                contentDescription = item.title,
                             )
                         },
                         label = { Text(text = item.title) },
@@ -102,27 +100,30 @@ fun FintrackApp() {
                         onClick = {
                             selectedItemIndex = index
                         },
-                        colors = NavigationBarItemDefaults.colors(
-                            indicatorColor = Color.Transparent
-                        )
+                        colors =
+                            NavigationBarItemDefaults.colors(
+                                indicatorColor = Color.Transparent,
+                            ),
                     )
                 }
             }
-        }
+        },
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(Color.White)
-                .padding(it) // Use the padding provided by Scaffold
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .background(Color.White)
+                    .padding(it), // Use the padding provided by Scaffold
             //  .verticalScroll(rememberScrollState())
         ) {
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(25.dp, top = 70.dp),
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(25.dp, top = 70.dp),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
                 Column {
                     Text(
@@ -142,22 +143,24 @@ fun FintrackApp() {
                 }
 
                 Image(
-                    modifier = Modifier
-                        .size(75.dp)
-                        .padding(22.dp)
-                        .background(primaryLight, RoundedCornerShape(5.dp)),
+                    modifier =
+                        Modifier
+                            .size(75.dp)
+                            .padding(22.dp)
+                            .background(primaryLight, RoundedCornerShape(5.dp)),
                     painter = painterResource(id = R.drawable.notification),
-                    contentDescription = "Profile picture"
+                    contentDescription = "Profile picture",
                 )
             }
 
             Spacer(Modifier.height(15.dp))
 
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                verticalAlignment = Alignment.CenterVertically
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                verticalAlignment = Alignment.CenterVertically,
             ) {
                 BalanceCard()
             }
@@ -165,23 +168,24 @@ fun FintrackApp() {
             Spacer(Modifier.height(5.dp))
 
             Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
+                modifier =
+                    Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
                 Text(
                     "Transaction History",
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.SemiBold,
-                    color = scrimLight
+                    color = scrimLight,
                 )
                 Text(
                     "See all",
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold,
-                    color = primaryLight
+                    color = primaryLight,
                 )
             }
 
@@ -196,40 +200,44 @@ fun FintrackApp() {
     }
 }
 
+
 @Composable
-fun BalanceCard(
-) {
+fun BalanceCard() {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(16.dp),
-        elevation =CardDefaults.cardElevation(
-            defaultElevation = 6.dp
-        ),
-        colors = CardDefaults.cardColors(
-            containerColor = primaryLight,
-        )
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+        elevation =
+            CardDefaults.cardElevation(
+                defaultElevation = 6.dp,
+            ),
+        colors =
+            CardDefaults.cardColors(
+                containerColor = primaryLight,
+            ),
     ) {
         Column(
-            modifier = Modifier
-                .padding(16.dp)
+            modifier =
+                Modifier
+                    .padding(16.dp),
         ) {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
                 Column {
                     Text(
                         text = "Total Balance",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Text(
                         text = "Ksh 15,000",
                         style = MaterialTheme.typography.headlineMedium,
                         fontWeight = FontWeight.Bold,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
             }
@@ -238,37 +246,37 @@ fun BalanceCard(
 
             Row(
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
                 Column(
-                    horizontalAlignment = Alignment.Start
+                    horizontalAlignment = Alignment.Start,
                 ) {
                     Text(
                         text = "Income",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Text(
                         text = "Ksh 15,000",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
-                        color = Color.Green
+                        color = Color.Green,
                     )
                 }
 
                 Column(
-                    horizontalAlignment = Alignment.End
+                    horizontalAlignment = Alignment.End,
                 ) {
                     Text(
                         text = "Expenses",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                     Text(
                         text = "Ksh 15,000",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
-                        color = Color.Red
+                        color = Color.Red,
                     )
                 }
             }
@@ -276,40 +284,41 @@ fun BalanceCard(
     }
 }
 
+
 @Composable
-fun TransactionsCard(
-    transaction: Transactions
-) {
+fun TransactionsCard(transaction: Transactions) {
     Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(vertical = 8.dp),
+        modifier =
+            Modifier
+                .fillMaxWidth()
+                .padding(vertical = 8.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
-        Column (
-            modifier = Modifier
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center
-        ){
+        Column(
+            modifier =
+                Modifier
+                    .padding(16.dp),
+            verticalArrangement = Arrangement.Center,
+        ) {
             Text(
                 text = transaction.title,
                 style = MaterialTheme.typography.titleMedium,
                 fontWeight = FontWeight.Bold,
-                color = scrimLightMediumContrast
+                color = scrimLightMediumContrast,
             )
             Text(
                 text = transaction.date,
                 style = MaterialTheme.typography.bodySmall,
                 fontWeight = FontWeight.SemiBold,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
         Text(
             text = transaction.amount,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.SemiBold,
-            color = if (transaction.amount.contains("-")) Color.Red else Color.Green
+            color = if (transaction.amount.contains("-")) Color.Red else Color.Green,
         )
     }
 }
