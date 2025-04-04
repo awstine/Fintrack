@@ -5,8 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.example.compose.FintrackTheme
-import com.micahnyabuto.fintrack.ui.screens.home.FintrackApp
-
+import com.micahnyabuto.fintrack.ui.screens.expense.AddExpenseScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FintrackTheme {
-                FintrackApp()
+                AddExpenseScreen()
             }
         }
     }

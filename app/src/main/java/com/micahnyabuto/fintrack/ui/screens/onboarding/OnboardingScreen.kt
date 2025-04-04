@@ -26,53 +26,58 @@ import com.micahnyabuto.fintrack.R
 
 
 @Composable
-fun OnboardingScreen(
-    modifier: Modifier = Modifier
-){
+fun OnboardingScreen(modifier: Modifier = Modifier) {
     Column(
-        modifier = modifier
-            .fillMaxSize(),
+        modifier =
+            modifier
+                .fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Image(
             painter = painterResource(R.drawable.fin),
             contentDescription = "Logo",
-            Modifier.size(280.dp)
-                .background(Color.Transparent)
-
+            Modifier
+                .size(280.dp)
+                .background(Color.Transparent),
         )
 
         Spacer(modifier = Modifier.size(30.dp))
 
-        Text(text = "Welcome to Fintrack ",
-            //modifier = Modifier.padding(10.dp),
+        Text(
+            text = "Welcome to Fintrack ",
+            // modifier = Modifier.padding(10.dp),
             color = Color.Green,
             fontSize = 20.sp,
-            fontWeight = FontWeight.SemiBold)
+            fontWeight = FontWeight.SemiBold,
+        )
         Spacer(modifier = Modifier.size(8.dp))
 
-        Text(text = "Where your financial discipline begins ",
-            color = Color.Green
+        Text(
+            text = "Where your financial discipline begins ",
+            color = Color.Green,
             // modifier = Modifier.padding(10.dp),
         )
-        Spacer(modifier = Modifier.size( 50.dp))
+        Spacer(modifier = Modifier.size(50.dp))
 
         Button(
             onClick = { /*TODO*/ },
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(35.dp)
-                .height(50.dp),
+            modifier =
+                Modifier
+                    .fillMaxWidth()
+                    .padding(35.dp)
+                    .height(50.dp),
             shape = RoundedCornerShape(6.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Green,
-                contentColor = Color.Unspecified
-            )
-
+            colors =
+                ButtonDefaults.buttonColors(
+                    containerColor = Color.Green,
+                    contentColor = Color.Unspecified,
+                ),
         ) {
-            Text(text = "Get Started",
-                color = Color.White)
+            Text(
+                text = "Get Started",
+                color = Color.White,
+            )
         }
     }
 }

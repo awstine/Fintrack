@@ -1,6 +1,5 @@
 package com.example.compose
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.LinearGradient
 
 val LinearGradient = Color(0xFF69AEA9)
 val primaryLight = Color(0xFF306A42)
@@ -218,10 +217,3 @@ val surfaceContainerLowDarkHighContrast = Color(0xFF1C211C)
 val surfaceContainerDarkHighContrast = Color(0xFF2D322D)
 val surfaceContainerHighDarkHighContrast = Color(0xFF383D37)
 val surfaceContainerHighestDarkHighContrast = Color(0xFF434843)
-
-
-
-
-
-
-
