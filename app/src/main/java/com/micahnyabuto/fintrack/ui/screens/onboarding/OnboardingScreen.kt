@@ -24,9 +24,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.micahnyabuto.fintrack.R
 
-
 @Composable
-fun OnboardingScreen(modifier: Modifier = Modifier) {
+fun OnboardingScreen(
+    modifier: Modifier = Modifier,
+    onGetStartedClick: () -> Unit,
+) {
     Column(
         modifier =
             modifier
@@ -61,7 +63,7 @@ fun OnboardingScreen(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.size(50.dp))
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = onGetStartedClick,
             modifier =
                 Modifier
                     .fillMaxWidth()
