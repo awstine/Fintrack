@@ -40,9 +40,13 @@ import com.example.compose.scrimLight
 import com.example.compose.scrimLightMediumContrast
 import com.micahnyabuto.fintrack.R
 
-
 @Composable
-fun FintrackApp() {
+fun FintrackApp(
+    navigateToChart: () -> Unit,
+    navigateToAdd: () -> Unit,
+    navigateToWallet: () -> Unit,
+    navigateToProfile: () -> Unit,
+) {
     val items =
         listOf(
             BottomNavigationItem(
@@ -61,7 +65,7 @@ fun FintrackApp() {
                 unselectedIcon = painterResource(R.drawable.add),
             ),
             BottomNavigationItem(
-                title = "Add",
+                title = "Wallet",
                 selectedIcon = painterResource(R.drawable.wallet2),
                 unselectedIcon = painterResource(R.drawable.wallet),
             ),
@@ -98,6 +102,13 @@ fun FintrackApp() {
                         label = { Text(text = item.title) },
                         selected = selectedItemIndex == index,
                         onClick = {
+                            when (index) {
+                                0 -> {}
+                                1 -> navigateToChart()
+                                2 -> navigateToAdd()
+                                3 -> navigateToWallet()
+                                4 -> navigateToProfile()
+                            }
                             selectedItemIndex = index
                         },
                         colors =
@@ -200,7 +211,6 @@ fun FintrackApp() {
     }
 }
 
-
 @Composable
 fun BalanceCard() {
     Card(
@@ -283,7 +293,6 @@ fun BalanceCard() {
         }
     }
 }
-
 
 @Composable
 fun TransactionsCard(transaction: Transactions) {
